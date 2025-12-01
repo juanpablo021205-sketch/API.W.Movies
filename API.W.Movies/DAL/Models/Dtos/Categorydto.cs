@@ -2,7 +2,7 @@
 
 namespace API.W.Movies.DAL.Models.Dtos
 {
-    public class Categorydto
+    public class CategoryDto
     {
         public int Id { get; set; }
 
@@ -14,4 +14,4 @@ namespace API.W.Movies.DAL.Models.Dtos
 
         public DateTime ModifiedDate { get; set; }
     }
-}
+}  

@@ -38,7 +38,7 @@ namespace API.W.Movies.Services
 
         public async Task<ICollection<CategoryDto>> GetCategoriesAsync()
         {
-            var categories = _categoryRepository.GetCategoriesAsync();//Solo estoy llamanso el metodo desd ela capa de Repository
+            var categories = await _categoryRepository.GetCategoriesAsync();//Solo estoy llamanso el metodo desd ela capa de Repository
             
             return _mapper.Map<ICollection<CategoryDto>>(categories);//Mapeando los datos obtenidos a DTOs
         }
