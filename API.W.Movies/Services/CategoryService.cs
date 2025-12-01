@@ -16,22 +16,22 @@ namespace API.W.Movies.Services
             _mapper = mapper;
         }
 
-        public Task<bool> CategoryExistsByIdAsync(int id)
+        public async Task<bool> CategoryExistsByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> CategoryExistsByNameAsync(string name)
+        public async Task<bool> CategoryExistsByNameAsync(string name)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> CreateCategoryAsync(Category category)
+        public async Task<bool> CreateCategoryAsync(Category category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteCategoryAsync(int id)
+        public async Task<bool> DeleteCategoryAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -43,12 +43,14 @@ namespace API.W.Movies.Services
             return _mapper.Map<ICollection<CategoryDto>>(categories);//Mapeando los datos obtenidos a DTOs
         }
 
-        public Task<CategoryDto> GetCategoryAsync(int id)
+        public async Task<CategoryDto> GetCategoryAsync(int id)
         {
-            throw new NotImplementedException();
+            var category = await _categoryRepository.GetCategoryAsync(id);//Obtener la categoria del repositorio
+
+            return _mapper.Map<CategoryDto>(category);//Mapeando los datos obtenidos a DTOs
         }
 
-        public Task<bool> UpdateCategoryAsync(Category category)
+        public async Task<bool> UpdateCategoryAsync(Category category)
         {
             throw new NotImplementedException();
         }
